@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4B16093A1E831E28001C4DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1609391E831E28001C4DA4 /* AppDelegate.swift */; };
-		4B16093C1E831E28001C4DA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16093B1E831E28001C4DA4 /* ViewController.swift */; };
 		4B16093F1E831E28001C4DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B16093D1E831E28001C4DA4 /* Main.storyboard */; };
 		4B1609411E831E28001C4DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1609401E831E28001C4DA4 /* Assets.xcassets */; };
 		4B1609441E831E28001C4DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */; };
+		4B16094F1E83231D001C4DA4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16094E1E83231D001C4DA4 /* AVFoundation.framework */; };
+		4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B1609361E831E28001C4DA4 /* EcosiaPlayer-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EcosiaPlayer-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1609391E831E28001C4DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B16093B1E831E28001C4DA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B16093E1E831E28001C4DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B1609401E831E28001C4DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B1609431E831E28001C4DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B1609451E831E28001C4DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B16094E1E83231D001C4DA4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B16094F1E83231D001C4DA4 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				4B1609391E831E28001C4DA4 /* AppDelegate.swift */,
-				4B16093B1E831E28001C4DA4 /* ViewController.swift */,
+				4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */,
 				4B16093D1E831E28001C4DA4 /* Main.storyboard */,
 				4B1609401E831E28001C4DA4 /* Assets.xcassets */,
 				4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */,
@@ -56,11 +59,20 @@
 			path = "EcosiaPlayer-iOS";
 			sourceTree = "<group>";
 		};
+		4B1609491E8320CE001C4DA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B16094E1E83231D001C4DA4 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B5B5C541E831C7000595F64 = {
 			isa = PBXGroup;
 			children = (
 				4B1609381E831E28001C4DA4 /* EcosiaPlayer-iOS */,
 				4B1609371E831E28001C4DA4 /* Products */,
+				4B1609491E8320CE001C4DA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,8 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B16093C1E831E28001C4DA4 /* ViewController.swift in Sources */,
 				4B16093A1E831E28001C4DA4 /* AppDelegate.swift in Sources */,
+				4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +217,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "EcosiaPlayer-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.obitow.EcosiaPlayer-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.obitow.ecosia-player";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -255,10 +267,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "EcosiaPlayer-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.obitow.EcosiaPlayer-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.obitow.ecosia-player";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -290,6 +302,7 @@
 				4B1609481E831E28001C4DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B5B5C581E831C7000595F64 /* Build configuration list for PBXProject "EcosiaPlayer" */ = {
 			isa = XCConfigurationList;
