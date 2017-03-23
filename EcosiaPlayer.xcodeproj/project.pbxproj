@@ -13,6 +13,16 @@
 		4B1609441E831E28001C4DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */; };
 		4B16094F1E83231D001C4DA4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16094E1E83231D001C4DA4 /* AVFoundation.framework */; };
 		4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */; };
+		4B8CE39B1E8346F200AB6F20 /* bensound-acousticbreeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3931E8346F200AB6F20 /* bensound-acousticbreeze.mp3 */; };
+		4B8CE39C1E8346F200AB6F20 /* bensound-buddy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3941E8346F200AB6F20 /* bensound-buddy.mp3 */; };
+		4B8CE39D1E8346F200AB6F20 /* bensound-cute.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3951E8346F200AB6F20 /* bensound-cute.mp3 */; };
+		4B8CE39E1E8346F200AB6F20 /* bensound-dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3961E8346F200AB6F20 /* bensound-dubstep.mp3 */; };
+		4B8CE39F1E8346F200AB6F20 /* bensound-epic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3971E8346F200AB6F20 /* bensound-epic.mp3 */; };
+		4B8CE3A01E8346F200AB6F20 /* bensound-funnysong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3981E8346F200AB6F20 /* bensound-funnysong.mp3 */; };
+		4B8CE3A11E8346F200AB6F20 /* bensound-happiness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3991E8346F200AB6F20 /* bensound-happiness.mp3 */; };
+		4B8CE3A21E8346F200AB6F20 /* bensound-littleidea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE39A1E8346F200AB6F20 /* bensound-littleidea.mp3 */; };
+		4B8CE3A41E834B2000AB6F20 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CE3A31E834B2000AB6F20 /* PlayerViewModel.swift */; };
+		4B8CE3A61E834FC500AB6F20 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CE3A51E834FC500AB6F20 /* Array+Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		4B1609451E831E28001C4DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B16094E1E83231D001C4DA4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		4B8CE3931E8346F200AB6F20 /* bensound-acousticbreeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-acousticbreeze.mp3"; sourceTree = "<group>"; };
+		4B8CE3941E8346F200AB6F20 /* bensound-buddy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-buddy.mp3"; sourceTree = "<group>"; };
+		4B8CE3951E8346F200AB6F20 /* bensound-cute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-cute.mp3"; sourceTree = "<group>"; };
+		4B8CE3961E8346F200AB6F20 /* bensound-dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-dubstep.mp3"; sourceTree = "<group>"; };
+		4B8CE3971E8346F200AB6F20 /* bensound-epic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-epic.mp3"; sourceTree = "<group>"; };
+		4B8CE3981E8346F200AB6F20 /* bensound-funnysong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-funnysong.mp3"; sourceTree = "<group>"; };
+		4B8CE3991E8346F200AB6F20 /* bensound-happiness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-happiness.mp3"; sourceTree = "<group>"; };
+		4B8CE39A1E8346F200AB6F20 /* bensound-littleidea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-littleidea.mp3"; sourceTree = "<group>"; };
+		4B8CE3A31E834B2000AB6F20 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		4B8CE3A51E834FC500AB6F20 /* Array+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +71,13 @@
 			children = (
 				4B1609391E831E28001C4DA4 /* AppDelegate.swift */,
 				4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */,
+				4B8CE3A31E834B2000AB6F20 /* PlayerViewModel.swift */,
+				4B8CE3A51E834FC500AB6F20 /* Array+Random.swift */,
 				4B16093D1E831E28001C4DA4 /* Main.storyboard */,
 				4B1609401E831E28001C4DA4 /* Assets.xcassets */,
 				4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */,
 				4B1609451E831E28001C4DA4 /* Info.plist */,
+				4B8CE3921E8346F200AB6F20 /* Resources */,
 			);
 			path = "EcosiaPlayer-iOS";
 			sourceTree = "<group>";
@@ -74,6 +97,21 @@
 				4B1609371E831E28001C4DA4 /* Products */,
 				4B1609491E8320CE001C4DA4 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		4B8CE3921E8346F200AB6F20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B8CE3931E8346F200AB6F20 /* bensound-acousticbreeze.mp3 */,
+				4B8CE3941E8346F200AB6F20 /* bensound-buddy.mp3 */,
+				4B8CE3951E8346F200AB6F20 /* bensound-cute.mp3 */,
+				4B8CE3961E8346F200AB6F20 /* bensound-dubstep.mp3 */,
+				4B8CE3971E8346F200AB6F20 /* bensound-epic.mp3 */,
+				4B8CE3981E8346F200AB6F20 /* bensound-funnysong.mp3 */,
+				4B8CE3991E8346F200AB6F20 /* bensound-happiness.mp3 */,
+				4B8CE39A1E8346F200AB6F20 /* bensound-littleidea.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +173,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8CE39C1E8346F200AB6F20 /* bensound-buddy.mp3 in Resources */,
+				4B8CE3A21E8346F200AB6F20 /* bensound-littleidea.mp3 in Resources */,
+				4B8CE39B1E8346F200AB6F20 /* bensound-acousticbreeze.mp3 in Resources */,
+				4B8CE3A11E8346F200AB6F20 /* bensound-happiness.mp3 in Resources */,
 				4B1609441E831E28001C4DA4 /* LaunchScreen.storyboard in Resources */,
+				4B8CE39F1E8346F200AB6F20 /* bensound-epic.mp3 in Resources */,
 				4B1609411E831E28001C4DA4 /* Assets.xcassets in Resources */,
+				4B8CE39E1E8346F200AB6F20 /* bensound-dubstep.mp3 in Resources */,
+				4B8CE3A01E8346F200AB6F20 /* bensound-funnysong.mp3 in Resources */,
 				4B16093F1E831E28001C4DA4 /* Main.storyboard in Resources */,
+				4B8CE39D1E8346F200AB6F20 /* bensound-cute.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +194,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8CE3A61E834FC500AB6F20 /* Array+Random.swift in Sources */,
+				4B8CE3A41E834B2000AB6F20 /* PlayerViewModel.swift in Sources */,
 				4B16093A1E831E28001C4DA4 /* AppDelegate.swift in Sources */,
 				4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */,
 			);
