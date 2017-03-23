@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-  mutating func removeRandom() -> Element {
-    return remove(at: Int(arc4random_uniform(UInt32(self.count))))
+  func randomElement() -> Element {
+    return self[Int(arc4random_uniform(UInt32(self.count)))]
   }
 }

@@ -36,26 +36,22 @@ class PlayerViewController: UIViewController {
   }
   
   @IBAction private func pauseButtonPressed() {
-    playerViewModel.pause()
+    playerViewModel.stop()
     playButton.isHidden = false
     pauseButton.isHidden = true
     displayLink.isPaused = true
+    updateUI()
   }
   
   @objc private func updateUI() {
-    playerViewModel.updateValues()
     currentTimeLabel.text = playerViewModel.elapsedTime
     totalTimeLabel.text = playerViewModel.totalTime
-    progressView.progress = playerViewModel.progress
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    playButtonPressed()
+    progressView.progress = Float(playerViewModel.progress)
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    updateUI()
     displayLink = CADisplayLink(target: self, selector: #selector(updateUI))
     displayLink.add(to: .current, forMode: .defaultRunLoopMode)
   }

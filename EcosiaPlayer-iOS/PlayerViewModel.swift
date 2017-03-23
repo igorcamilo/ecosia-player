@@ -10,68 +10,75 @@ import UIKit
 import AVFoundation
 
 class PlayerViewModel {
-  
-  private lazy var musicFiles: [URL]! = {
-    do {
-      guard let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil) else {
-        throw Error.noFiles
-      }
-      return urls
-    } catch {
-      fatalError("Cannot find music files: \(error)")
+
+  /// List of all mp3 files URLs in the main bundle.
+  private let musicFiles: [URL] = {
+    guard let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil) else {
+      fatalError("Cannot find music files")
     }
+    return urls
   }()
-  
-  private var musicFilesCopy: [URL] = []
-  
-  private var currentPlayer: AVAudioPlayer?
-  
-  private let dateComponentsFormatter: DateComponentsFormatter = {
-    let formatter = DateComponentsFormatter()
-    formatter.zeroFormattingBehavior = .pad
-    formatter.allowedUnits = [.minute, .second]
-    return formatter
-  }()
-  
-  private(set) var elapsedTime: String?
-  private(set) var totalTime: String?
-  private(set) var progress: Float = 0
-  
-  func updateValues() {
-    if let currentPlayer = currentPlayer {
-      elapsedTime = dateComponentsFormatter.string(from: currentPlayer.currentTime)
-      progress = Float(currentPlayer.duration > 0 ? currentPlayer.currentTime / currentPlayer.duration : 0.0)
-    } else {
-      elapsedTime = dateComponentsFormatter.string(from: 0)
-      progress = 0
+
+  /// Current music being played.
+  private var currentPlayer: AVAudioPlayer? {
+    didSet {
+      totalTime = currentPlayer?.durationString
     }
   }
-  
+
+  /// Formatted total time of music.
+  private(set) var totalTime: String?
+
+  /// Formatted current time of music.
+  var elapsedTime: String? {
+    return currentPlayer?.currentTimeString
+  }
+
+  /// Percentage of music already played. Varies from 0.0 to 1.0.
+  var progress: Double {
+    return currentPlayer?.progress ?? 0.0
+  }
+
+  /// Selects a random mp3 from bundle and plays it.
   func play() throws {
     if currentPlayer == nil {
-      currentPlayer = try nextPlayer()
-      totalTime = dateComponentsFormatter.string(from: currentPlayer!.duration)
+      currentPlayer = try AVAudioPlayer(contentsOf: musicFiles.randomElement(), fileTypeHint: AVFileTypeMPEGLayer3)
     }
     guard currentPlayer!.play() else {
       throw Error.cantPlay
     }
   }
-  
-  func pause() {
-    currentPlayer?.pause()
-  }
-  
-  private func nextPlayer() throws -> AVAudioPlayer {
-    if musicFilesCopy.isEmpty {
-      musicFilesCopy = musicFiles
-    }
-    return try AVAudioPlayer(contentsOf: musicFiles.removeRandom(), fileTypeHint: AVFileTypeMPEGLayer3)
+
+  /// Stops the current music.
+  func stop() {
+    currentPlayer?.stop()
+    currentPlayer = nil
   }
 }
 
 extension PlayerViewModel {
   enum Error: Swift.Error {
-    case noFiles
     case cantPlay
+  }
+}
+
+// TODO: Move to AVAudioPlayer+Formatter.swift
+
+private let dateComponentsFormatter: DateComponentsFormatter = {
+  let formatter = DateComponentsFormatter()
+  formatter.zeroFormattingBehavior = .pad
+  formatter.allowedUnits = [.minute, .second]
+  return formatter
+}()
+
+extension AVAudioPlayer {
+  var durationString: String? {
+    return dateComponentsFormatter.string(from: duration)
+  }
+  var currentTimeString: String? {
+    return dateComponentsFormatter.string(from: currentTime)
+  }
+  var progress: Double {
+    return duration > 0 ? currentTime / duration : 0.0
   }
 }
