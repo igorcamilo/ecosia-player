@@ -75,14 +75,21 @@ class PlayerViewModel: NSObject {
   }
 
   /// Selects a random mp3 from bundle and plays it.
-  func play() throws {
+  func play(completionHandler: (() -> Void)?) throws {
     if currentPlayer == nil {
       let url = musicFiles.randomElement()
       currentPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
       currentAsset = AVAsset(url: url)
     }
-    guard currentPlayer!.play() else {
-      throw Error.cantPlay
+    let player = currentPlayer!
+    DispatchQueue(label: "Play Async").async { [weak self] in
+      player.prepareToPlay()
+      DispatchQueue.main.async {
+        if player == self?.currentPlayer {
+          player.play()
+        }
+        completionHandler?()
+      }
     }
   }
 
@@ -103,9 +110,18 @@ extension PlayerViewModel {
 }
 
 extension PlayerViewModel: AVAudioPlayerDelegate {
-  public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+  
+  private func endPlay() {
     currentPlayer = nil
     currentAsset = nil
     didStopHandler?()
+  }
+  
+  func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Swift.Error?) {
+    endPlay()
+  }
+  
+  func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    endPlay()
   }
 }

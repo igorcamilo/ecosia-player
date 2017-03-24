@@ -16,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
     
+    window?.tintColor = #colorLiteral(red: 0.862745098, green: 0.4941176471, blue: 0.3450980392, alpha: 1)
+    
     do {
-      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+      try AVAudioSession.sharedInstance().setActive(true)
     } catch {
       print(error)
     }

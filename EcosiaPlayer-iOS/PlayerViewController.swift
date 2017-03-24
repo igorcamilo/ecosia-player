@@ -26,8 +26,11 @@ class PlayerViewController: UIViewController {
   
   @IBAction private func playButtonPressed() {
     do {
-      try playerViewModel.play()
-      updateUI()
+      playButton.isEnabled = false
+      try playerViewModel.play { [weak self] in
+        self?.playButton.isEnabled = true
+        self?.updateUI()
+      }
       displayLink.isPaused = false
     } catch {
       print(error)
