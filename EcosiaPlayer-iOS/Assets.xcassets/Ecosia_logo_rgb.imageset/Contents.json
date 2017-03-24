@@ -2,25 +2,20 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ic_pause_circle_outline_48pt.png",
+      "filename" : "Ecosia_logo_rgb.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_pause_circle_outline_48pt_2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_pause_circle_outline_48pt_3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

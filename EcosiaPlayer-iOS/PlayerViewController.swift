@@ -22,37 +22,49 @@ class PlayerViewController: UIViewController {
   @IBOutlet private var totalTimeLabel: UILabel!
   @IBOutlet private var progressView: UIProgressView!
   @IBOutlet private var playButton: UIButton!
-  @IBOutlet private var pauseButton: UIButton!
+  @IBOutlet private var stopButton: UIButton!
   
   @IBAction private func playButtonPressed() {
     do {
       try playerViewModel.play()
-      playButton.isHidden = true
-      pauseButton.isHidden = false
+      updateUI()
       displayLink.isPaused = false
     } catch {
       print(error)
     }
   }
   
-  @IBAction private func pauseButtonPressed() {
+  @IBAction private func stopButtonPressed() {
     playerViewModel.stop()
-    playButton.isHidden = false
-    pauseButton.isHidden = true
-    displayLink.isPaused = true
     updateUI()
+    updateDynamicUI()
+    displayLink.isPaused = true
   }
   
-  @objc private func updateUI() {
-    currentTimeLabel.text = playerViewModel.elapsedTime
+  private func updateUI() {
+    coverImageView.image = playerViewModel.coverImage ?? #imageLiteral(resourceName: "Ecosia_logo_rgb")
+    trackNameLabel.text = playerViewModel.title ?? " "
+    artistLabel.text = playerViewModel.artist ?? " "
     totalTimeLabel.text = playerViewModel.totalTime
+    let playing = playerViewModel.isPlaying
+    playButton.isHidden = playing
+    stopButton.isHidden = !playing
+    updateDynamicUI()
+  }
+  
+  @objc private func updateDynamicUI() {
+    currentTimeLabel.text = playerViewModel.elapsedTime
     progressView.progress = Float(playerViewModel.progress)
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     updateUI()
-    displayLink = CADisplayLink(target: self, selector: #selector(updateUI))
+    playerViewModel.stopHandler = { [weak self] () -> Void in
+      self?.displayLink.isPaused = true
+      self?.updateUI()
+    }
+    displayLink = CADisplayLink(target: self, selector: #selector(updateDynamicUI))
     displayLink.add(to: .current, forMode: .defaultRunLoopMode)
   }
   

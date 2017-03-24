@@ -24,48 +24,52 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2s-o1-SOM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-ej-8A4">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ecosia_logo_rgb" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-ej-8A4">
                                         <rect key="frame" x="20" y="28" width="280" height="311"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJG-xI-qEo">
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJG-xI-qEo">
                                         <rect key="frame" x="20" y="347" width="280" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-26-zjc">
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-26-zjc">
                                         <rect key="frame" x="141" y="376" width="38" height="18"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcm-Pb-uyR">
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcm-Pb-uyR">
                                         <rect key="frame" x="20" y="387" width="27" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="3:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anh-bf-ygf">
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="3:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anh-bf-ygf">
                                         <rect key="frame" x="273" y="387" width="27" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hHK-Gx-sWV">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hHK-Gx-sWV">
                                         <rect key="frame" x="20" y="402" width="280" height="2"/>
                                     </progressView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJ8-4W-uZ9">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJ8-4W-uZ9">
                                         <rect key="frame" x="136" y="412" width="48" height="48"/>
-                                        <state key="normal" image="ic_play_circle_outline_48pt"/>
+                                        <state key="normal" image="ic_play_arrow_48pt"/>
                                         <connections>
                                             <action selector="playButtonPressed" destination="FXa-rj-mwk" eventType="touchUpInside" id="4bp-c3-81d"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jy-Ke-Eyy">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jy-Ke-Eyy">
                                         <rect key="frame" x="136" y="412" width="48" height="48"/>
-                                        <state key="normal" image="ic_pause_circle_outline_48pt"/>
+                                        <state key="normal" image="ic_stop_48pt"/>
                                         <connections>
-                                            <action selector="pauseButtonPressed" destination="FXa-rj-mwk" eventType="touchUpInside" id="Yzj-iv-gVB"/>
+                                            <action selector="stopButtonPressed" destination="FXa-rj-mwk" eventType="touchUpInside" id="ew4-GT-YKc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,9 +117,9 @@
                         <outlet property="artistLabel" destination="q3e-26-zjc" id="QWI-0l-xzn"/>
                         <outlet property="coverImageView" destination="TZG-ej-8A4" id="XEa-5Z-QnP"/>
                         <outlet property="currentTimeLabel" destination="bcm-Pb-uyR" id="qcE-O3-hXH"/>
-                        <outlet property="pauseButton" destination="9Jy-Ke-Eyy" id="FWX-bz-Hfg"/>
                         <outlet property="playButton" destination="vJ8-4W-uZ9" id="eu2-YS-FoI"/>
                         <outlet property="progressView" destination="hHK-Gx-sWV" id="EYS-dy-ie4"/>
+                        <outlet property="stopButton" destination="9Jy-Ke-Eyy" id="bY4-v3-j7t"/>
                         <outlet property="totalTimeLabel" destination="Anh-bf-ygf" id="nWy-6y-DFb"/>
                         <outlet property="trackNameLabel" destination="bJG-xI-qEo" id="OwM-iY-Bi8"/>
                     </connections>
@@ -126,7 +130,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_pause_circle_outline_48pt" width="48" height="48"/>
-        <image name="ic_play_circle_outline_48pt" width="48" height="48"/>
+        <image name="Ecosia_logo_rgb" width="826" height="592"/>
+        <image name="ic_play_arrow_48pt" width="48" height="48"/>
+        <image name="ic_stop_48pt" width="48" height="48"/>
     </resources>
 </document>

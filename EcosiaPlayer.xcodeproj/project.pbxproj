@@ -13,6 +13,8 @@
 		4B1609441E831E28001C4DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */; };
 		4B16094F1E83231D001C4DA4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16094E1E83231D001C4DA4 /* AVFoundation.framework */; };
 		4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */; };
+		4B53A6B71E84709B002C13B2 /* AVAudioPlayer+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B53A6B61E84709B002C13B2 /* AVAudioPlayer+Formatter.swift */; };
+		4B53A6B91E84AB85002C13B2 /* Data+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B53A6B81E84AB85002C13B2 /* Data+Conversion.swift */; };
 		4B8CE39B1E8346F200AB6F20 /* bensound-acousticbreeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3931E8346F200AB6F20 /* bensound-acousticbreeze.mp3 */; };
 		4B8CE39C1E8346F200AB6F20 /* bensound-buddy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3941E8346F200AB6F20 /* bensound-buddy.mp3 */; };
 		4B8CE39D1E8346F200AB6F20 /* bensound-cute.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CE3951E8346F200AB6F20 /* bensound-cute.mp3 */; };
@@ -34,6 +36,8 @@
 		4B1609451E831E28001C4DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B16094E1E83231D001C4DA4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		4B53A6B61E84709B002C13B2 /* AVAudioPlayer+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Formatter.swift"; sourceTree = "<group>"; };
+		4B53A6B81E84AB85002C13B2 /* Data+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Conversion.swift"; sourceTree = "<group>"; };
 		4B8CE3931E8346F200AB6F20 /* bensound-acousticbreeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-acousticbreeze.mp3"; sourceTree = "<group>"; };
 		4B8CE3941E8346F200AB6F20 /* bensound-buddy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-buddy.mp3"; sourceTree = "<group>"; };
 		4B8CE3951E8346F200AB6F20 /* bensound-cute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-cute.mp3"; sourceTree = "<group>"; };
@@ -72,7 +76,9 @@
 				4B1609391E831E28001C4DA4 /* AppDelegate.swift */,
 				4B1609501E832BD4001C4DA4 /* PlayerViewController.swift */,
 				4B8CE3A31E834B2000AB6F20 /* PlayerViewModel.swift */,
+				4B53A6B61E84709B002C13B2 /* AVAudioPlayer+Formatter.swift */,
 				4B8CE3A51E834FC500AB6F20 /* Array+Random.swift */,
+				4B53A6B81E84AB85002C13B2 /* Data+Conversion.swift */,
 				4B16093D1E831E28001C4DA4 /* Main.storyboard */,
 				4B1609401E831E28001C4DA4 /* Assets.xcassets */,
 				4B1609421E831E28001C4DA4 /* LaunchScreen.storyboard */,
@@ -195,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8CE3A61E834FC500AB6F20 /* Array+Random.swift in Sources */,
+				4B53A6B91E84AB85002C13B2 /* Data+Conversion.swift in Sources */,
 				4B8CE3A41E834B2000AB6F20 /* PlayerViewModel.swift in Sources */,
 				4B16093A1E831E28001C4DA4 /* AppDelegate.swift in Sources */,
+				4B53A6B71E84709B002C13B2 /* AVAudioPlayer+Formatter.swift in Sources */,
 				4B1609511E832BD4001C4DA4 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
