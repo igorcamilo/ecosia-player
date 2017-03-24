@@ -29,17 +29,22 @@ class PlayerViewModel: NSObject {
   
   fileprivate var currentAsset: AVAsset? {
     didSet {
-      oldValue?.cancelLoading()
       title = nil
       artist = nil
       coverImage = nil
       guard let asset = currentAsset else {
         return
       }
-      currentAsset?.loadValuesAsynchronously(forKeys: [AVMetadataCommonKeyTitle, AVMetadataCommonKeyArtist, AVMetadataCommonKeyArtwork]) { [weak self] () -> Void in
+      asset.loadValuesAsynchronously(forKeys: ["commonMetadata"]) { [weak self] in
+        guard self?.currentAsset == asset else {
+          return
+        }
         self?.title = AVMetadataItem.metadataItems(from: asset.commonMetadata, withKey: AVMetadataCommonKeyTitle, keySpace: AVMetadataKeySpaceCommon).first?.stringValue
         self?.artist = AVMetadataItem.metadataItems(from: asset.commonMetadata, withKey: AVMetadataCommonKeyArtist, keySpace: AVMetadataKeySpaceCommon).first?.stringValue
         self?.coverImage = AVMetadataItem.metadataItems(from: asset.commonMetadata, withKey: AVMetadataCommonKeyArtwork, keySpace: AVMetadataKeySpaceCommon).first?.dataValue?.image
+        DispatchQueue.main.async { [weak self] in
+          self?.didLoadMetadataHandler?()
+        }
       }
     }
   }
@@ -53,6 +58,8 @@ class PlayerViewModel: NSObject {
   private(set) var title: String?
   
   private(set) var artist: String?
+  
+  var didLoadMetadataHandler: (() -> Void)?
 
   /// Formatted total time of music.
   private(set) var totalTime: String?
@@ -72,7 +79,7 @@ class PlayerViewModel: NSObject {
     if currentPlayer == nil {
       let url = musicFiles.randomElement()
       currentPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
-      currentAsset = AVAsset(url: musicFiles.randomElement())
+      currentAsset = AVAsset(url: url)
     }
     guard currentPlayer!.play() else {
       throw Error.cantPlay
@@ -86,7 +93,7 @@ class PlayerViewModel: NSObject {
     currentAsset = nil
   }
   
-  var stopHandler: (() -> Void)?
+  var didStopHandler: (() -> Void)?
 }
 
 extension PlayerViewModel {
@@ -99,6 +106,6 @@ extension PlayerViewModel: AVAudioPlayerDelegate {
   public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
     currentPlayer = nil
     currentAsset = nil
-    stopHandler?()
+    didStopHandler?()
   }
 }

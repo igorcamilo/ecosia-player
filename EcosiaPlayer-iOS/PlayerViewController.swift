@@ -60,8 +60,11 @@ class PlayerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     updateUI()
-    playerViewModel.stopHandler = { [weak self] () -> Void in
+    playerViewModel.didStopHandler = { [weak self] in
       self?.displayLink.isPaused = true
+      self?.updateUI()
+    }
+    playerViewModel.didLoadMetadataHandler = { [weak self] in
       self?.updateUI()
     }
     displayLink = CADisplayLink(target: self, selector: #selector(updateDynamicUI))
