@@ -27,6 +27,7 @@ class PlayerViewModel: NSObject {
     }
   }
   
+  /// Metadata container.
   fileprivate var currentAsset: AVAsset? {
     didSet {
       title = nil
@@ -49,16 +50,21 @@ class PlayerViewModel: NSObject {
     }
   }
   
+  /// Check if music is playing.
   var isPlaying: Bool {
     return currentPlayer?.isPlaying ?? false
   }
   
+  /// File artwork.
   private(set) var coverImage: UIImage?
   
+  /// Music title.
   private(set) var title: String?
   
+  /// Artist name.
   private(set) var artist: String?
   
+  /// Called on metadata load.
   var didLoadMetadataHandler: (() -> Void)?
 
   /// Formatted total time of music.
@@ -82,6 +88,7 @@ class PlayerViewModel: NSObject {
       currentAsset = AVAsset(url: url)
     }
     let player = currentPlayer!
+    // Play in background to improve performance.
     DispatchQueue(label: "Play Async").async { [weak self] in
       player.prepareToPlay()
       DispatchQueue.main.async {
@@ -100,6 +107,7 @@ class PlayerViewModel: NSObject {
     currentAsset = nil
   }
   
+  /// Called on stop and error.
   var didStopHandler: (() -> Void)?
 }
 

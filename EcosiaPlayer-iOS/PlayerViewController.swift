@@ -13,6 +13,7 @@ class PlayerViewController: UIViewController {
   
   private let playerViewModel = PlayerViewModel()
   
+  /// Runs every frame.
   private var displayLink: CADisplayLink!
   
   @IBOutlet private var coverImageView: UIImageView!
@@ -44,6 +45,7 @@ class PlayerViewController: UIViewController {
     displayLink.isPaused = true
   }
   
+  /// Updates static and dynamic UI elements.
   private func updateUI() {
     coverImageView.image = playerViewModel.coverImage ?? #imageLiteral(resourceName: "Ecosia_logo_rgb")
     trackNameLabel.text = playerViewModel.title ?? " "
@@ -55,6 +57,7 @@ class PlayerViewController: UIViewController {
     updateDynamicUI()
   }
   
+  /// Updates dynamic UI elements.
   @objc private func updateDynamicUI() {
     currentTimeLabel.text = playerViewModel.elapsedTime
     progressView.progress = Float(playerViewModel.progress)
@@ -63,6 +66,7 @@ class PlayerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     updateUI()
+    // Configure behavior
     playerViewModel.didStopHandler = { [weak self] in
       self?.displayLink.isPaused = true
       self?.updateUI()
@@ -70,6 +74,7 @@ class PlayerViewController: UIViewController {
     playerViewModel.didLoadMetadataHandler = { [weak self] in
       self?.updateUI()
     }
+    // Configure update loop.
     displayLink = CADisplayLink(target: self, selector: #selector(updateDynamicUI))
     displayLink.add(to: .current, forMode: .defaultRunLoopMode)
   }
